@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section id = "todo">
+            <form>
+                <div class= "shadow-sm p-3 mb-5 bg-body rounded" id="datos">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="nombre">Nombre: </label>
+                    <input  class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="nombre">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="apellidos">Apellidos: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="apellidos">
+                    <label  class= "shadow-lg p-3 mb-5 bg-body rounded" for="añoEntrada">Año de entrada: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="añoEntrada">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="id">Id: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="id">
+                </div>
+                <div id ="botones">
+                    <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="getStudent()">Mostrar</button>
+                    <button  class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="postStudent()">Crear</button>
+                    <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="putStudent()">Actualizar</button>
+                    <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="deleteStudent()">Eliminar</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            <table class="table table-dark table-striped" id="tabla">
+                <h1 class= "shadow-lg p-3 mb-5 bg-body rounded">Información sobre alumnos</h1>
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Año de entrada</th>
+                  </tr>
+                </thead>
+              </table>
+              <button class= "shadow-lg p-3 mb-5 bg-body rounded" type ="button" onclick="eliminarInfo()">Eliminar Información</button>
+        </section>
+    </main>
+    <script src="controladorAPI.js"></script>
+</body>
+</html>
