@@ -5,15 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prueba.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
-        <section id = "todo">
-            <form>
-                <div class= "shadow-sm p-3 mb-5 bg-body rounded" id="datos">
+    <main class="grid_principal">
+        <header class="app_bar display_row_center">
+            <h1>Información Notas</h1>
+        </header>
+        <aside class="aside">
+            <nav class="nav">
+                <li id="n1"><a href="alumnos.html"><img src="../assests/user (2).png"></a></li>
+                <li id="n2"><a href="#"><img src="../assests/test.png"></a></li>
+                <li id="n3"><a href="impartidas.html"><img src="../assests/training.png"></a></li>
+            </nav>
+        </aside>
+        <section class="grid_secundario2" id = "todo">
+            <article class="grid_top_left box_center_rounded">
+                <div class="info box_center_rounded">
+                    <h4>Leyenda: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Asignatura: </span>Id de la asignatura en la BBDD</li>
+                        <li><span>Profesor: </span>Id del profesor en la BBDD</li>
+                        <li><span>Alumno: </span>Id del alumno en la BBDD</li>
+                        <li><span>Fecha: </span>Fecha de la realización del test</li>
+                        <li><span>Nota: </span>Nota obtenida en el test</li>
+                        <li><span>Id alumno: </span>Id de alumno en la BBDD</li>
+                        <li><span>Id nota: </span>Id de nota en la BBDD</li>
+                    </ul>
+                </div>
+                <div class ="info box_center_rounded">
+                    <h4>Botones: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Mostrar: </span>Muestra información sobre las notas de X alumno, identificando el id alumno</li>
+                        <li><span>Crear: </span>Crea una nota con los campos rellenos,excepto el id nota</li>
+                        <li><span>Actualizar: </span>Identificar id nota, se modifica la información de la nota</li>
+                        <li><span>Eliminar: </span>Poniendo el id, se elimina la información de esa nota</li>
+                    </ul>
+                </div>
+            </article>
+            <form class="grid_top_rigth box_center_rounded display_column_space">
+                <div class= "display_row_center box_center_rounded fixed2" id="datos">
                     <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="asignatura">Asignatura: </label>
                     <input  class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="asignatura">
                     <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="profesor">Profesor: </label>
@@ -30,29 +65,28 @@
                     <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="id">
                     
                 </div>
-                <div id ="botones">
+                <div class ="display_row_space fixed2" id ="botones">
                     <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="getMarks()">Mostrar</button>
                     <button  class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="postMarks()">Crear</button>
                     <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="putMarks()">Actualizar</button>
                     <button class= "shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="deleteMarks()">Eliminar</button>
                 </div>
             </form>
-        </section>
-        <section>
-            <table class="table table-dark table-striped" id="tabla">
-                <h1 class= "shadow-lg p-3 mb-5 bg-body rounded">Información sobre notas</h1>
-                <thead>
-                  <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Asignatura</th>
-                    <th scope="col">Profesor</th>
-                    <th scope="col">Alumno</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Nota</th>
-                  </tr>
-                </thead>
-              </table>
-              <button class= "shadow-lg p-3 mb-5 bg-body rounded" type ="button" onclick="eliminarInfo()">Eliminar Información</button>
+            <article class= "grid_low box_center_rounded">
+                <table class="table table-dark table-striped box_center_rounded" id="tabla">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Alumno</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nota</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <button class= "shadow-lg p-3 mb-5 bg-body rounded" type ="button" onclick="eliminarInfo()">Eliminar Información</button>
+            </article>
         </section>
     </main>
     <script src="controladorAPI.js"></script>

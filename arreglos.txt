@@ -1,0 +1,11 @@
+Mismo margen a los lados como entre las cajas
+
+al hacer el hover incluir el texto en la nav
+
+centrar cajas de leyenda y datos
+
+responsive no entiendo porque se va a parla la segunda caja
+
+navegación lateral que indique en cual está actualmente
+
+cuando la tabla tiene muchos datos que las tablas no salgan por encima del bkground

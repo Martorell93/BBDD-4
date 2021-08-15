@@ -226,11 +226,11 @@ async function getMarks() {
                 th.setAttribute("scope", "row");
                 th.textContent = result[i].mark_id;
                 let td1 = document.createElement("td");
-                td1.textContent = result[i].subject_id;
+                td1.textContent = result[i].title;
                 let td2 = document.createElement("td");
-                td2.textContent = result[i].teacher_id;
+                td2.textContent = result[i].name_teacher +" "+ result[i].surname_teacher;
                 let td3 = document.createElement("td");
-                td3.textContent = result[i].student_id;
+                td3.textContent = result[i].name_student +" "+ result[i].surname_student;
                 let td4 = document.createElement("td");
                 td4.textContent = result[i].date;
                 let td5 = document.createElement("td");

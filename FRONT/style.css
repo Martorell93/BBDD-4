@@ -1,0 +1,50 @@
+/* ----- External imports -----  */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap);
+
+
+/* ----- Declarations ----- */
+:root {
+    --colorBlack: #000;
+    --colorWhite: #fff;
+    --primaryColor: #8A9EA0;
+    --secundaryColor: #FCFAF0;
+    --complementColor: #B5B2B0;
+    --contrastColor: #99B0B0;
+    --grid_row: 72px;
+    --margin_body: 32px;
+    --borderRadius-s: 3px;
+    --borderRadius-m: 7px;
+    --borderRadius-l: 11px;
+    --borderRadius-xl: 16px;
+    --fontSize: 11px;
+}
+
+/* ----- Cleaners ------ */
+* {
+    font-family: 'Montserrat', arial;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--fontSize);
+    font-weight: 300;
+    background: transparent;
+    /* list-style-type: none; */
+}
+/* ----- Defaults ----- */
+p, a, li, span, h1, h2, h3, h4, h5, h6 {
+    font-size: 1.6rem;
+}
+@media screen and (max-width: 768px) {
+    p, a, li, span, h1, h2, h3, h4, h5, h6 {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 475px) {
+    p, a, li, span, h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2rem;
+    }
+}

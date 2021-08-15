@@ -1,0 +1,203 @@
+/* Grid template inicial */
+
+.grid_principal {
+    display: grid;
+    --grid_column: 72px;
+    grid-template-columns: var(--grid_column) calc(100vw - var(--grid_column));
+    grid-template-rows: var(--grid_row) calc(100vh - var(--grid_row));
+    grid-template-areas: "header header" "aside body";
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--secundaryColor);
+}
+
+.app_bar {
+    grid-area: header;
+    background-color: var(--primaryColor);
+    position: sticky;
+    top: 0;
+    font-weight:bolder;
+    color: var(--secundaryColor)
+}
+
+.aside {
+    grid-area: aside;
+    background-color: var(--contrastColor);
+    position: sticky;
+    top: var(--grid_row);
+}
+.aside:hover {
+    width: 200px;
+}
+
+/* .aside:hover #n1::after {
+content: "Alumnos";
+color: var(--secundaryColor);
+} */
+
+/* ~ Solo aplica a los hermanos inferiores */
+.aside:hover ~ .grid_secundario {
+    max-width: calc(100% - 200px - (var(--margin_body)*2));
+    min-width: calc(100% - 200px - (var(--margin_body)*2));
+    transform: translateX(75px);
+}
+
+
+/* Navegación lateral */
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.nav > li {
+    color: var(--secundaryColor);
+    height: var(--margin_body);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav > img {
+    padding: 24px;
+}
+
+/* Subgrid de section "contenido o cuerpo" */
+.grid_secundario {
+    grid-area: body;
+    background-color: var(--complementColor);
+    max-width: calc(100% - (var(--margin_body)*2));
+    min-width: calc(100% - (var(--margin_body)*2));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: max(50%, 300px) max(50%, 300px);
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "topL topR" "low low";
+}
+
+.grid_secundario2 {
+    grid-area: body;
+    background-color: var(--complementColor);
+    max-width: calc(100% - (var(--margin_body)*2));
+    min-width: calc(100% - (var(--margin_body)*2));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: max(50%, 300px) max(50%, 300px);
+    grid-template-rows: 70% 30%;
+    grid-template-areas: "topL topR" "low low";
+}
+
+.grid_top_left {
+    grid-area: topL;
+    background-color: var(--secundaryColor);
+}
+
+.box_center_rounded {
+    max-width: calc(100% - var(--margin_body));
+    min-width: calc(100% - var(--margin_body));
+    max-height: calc(100% - var(--margin_body));
+    min-height: calc(100% - var(--margin_body));
+    margin: auto;
+    border-radius: 4px;
+}
+
+.grid_top_rigth {
+    grid-area: topR;
+    background-color: var(--secundaryColor);
+}
+
+.grid_low {
+    grid-area: low;
+    background-color: var(--secundaryColor);
+}
+
+.display_column_space {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.display_row_center {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.display_row_center {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.display_row_space {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.fixed {
+    max-width: max(460px, calc(80% - (var(--margin_body)*2)));
+    min-width: max(460px, calc(80% - (var(--margin_body)*2)));
+    max-height: calc(80% - (var(--margin_body)*2));
+    min-height: calc(80% - (var(--margin_body)*2));
+    margin: auto;
+}
+
+.fixed2 {
+    max-width: max(470px, calc(80% - (var(--margin_body)*2)));
+    min-width: max(470px, calc(80% - (var(--margin_body)*2)));
+    max-height: calc(80% - (var(--margin_body)*2));
+    min-height: calc(80% - (var(--margin_body)*2));
+    margin: auto;
+    line-height: 20px;
+}
+
+.info > h4 {
+    font-size: 16px;
+    line-height: 30px;
+}
+.bullet_list {
+    list-style: circle;
+}
+
+.bullet_list > li, span {
+    font-size: 12px;
+}
+
+.bullet_list > span {
+  font-weight: 400;
+}
+
+#tabla {
+    /* overflow:visible; */
+}
+
+@media screen and (max-width: 1008px) {
+    .grid_secundario {
+        display: grid;
+        grid-template-columns: max(100%, 300px) ;
+        grid-template-rows: 50% 50% 50%;
+        grid-template-areas: "top1" "mid1" "low1";
+    }
+
+    .grid_top_left {
+        grid-area: top1;
+    }
+
+    .grid_top_right {
+        grid-area: mid1 !important;
+    }
+
+    .grid_low {
+        grid-area: low1;
+    }
+}

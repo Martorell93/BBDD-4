@@ -145,7 +145,7 @@ app.get("/notas",
 
             if (request.query.id) {
                 let param = [id];
-                let sql = "SELECT * FROM marks WHERE student_id = ?";
+                let sql = "SELECT m.mark_id, sb.title, t.name_teacher, t.surname_teacher, s.name_student, s.surname_student, m.date, m.mark FROM marks AS m JOIN subjects AS sb ON(m.subject_id = sb.subject_id) JOIN students AS s ON(m.student_id = s.student_id) JOIN teachers AS t ON(m.teacher_id = t.teacher_id)  WHERE m.student_id = ?";
                 connection.query(sql, param, function(err, result) {
                     if (err) {
                         console.log(err);
@@ -268,7 +268,7 @@ app.get("/apuntadas",
 
             if (request.query.id) {
                 let param = [id];
-                let sql = "SELECT s.name_student, s.surname_student, sb.title FROM marks AS m JOIN students AS s ON(m.student_id = s.student_id) JOIN subjects AS sb ON(m.subject_id = sb.subject_id) WHERE m.student_id = ?";
+                let sql = "SELECT s.student_id s.name_student, s.surname_student, sb.title FROM marks AS m JOIN students AS s ON(m.student_id = s.student_id) JOIN subjects AS sb ON(m.subject_id = sb.subject_id) WHERE m.student_id = ?";
                 connection.query(sql, param, function(err, result) {
                     if (err) {
                         console.log(err);
@@ -281,7 +281,7 @@ app.get("/apuntadas",
             } 
             else {
                 let param = [];
-                let sql = "SELECT s.name_student, s.surname_student, sb.title FROM marks AS m JOIN student AS s ON(m.student_id = s.student_id) JOIN subjects AS sb ON(m.subject_id = sb.subject_id)";
+                let sql = "SELECT s.student_id s.name_student, s.surname_student, sb.title FROM marks AS m JOIN student AS s ON(m.student_id = s.student_id) JOIN subjects AS sb ON(m.subject_id = sb.subject_id)";
                 connection.query(sql, param, function(err, result) {
                     if (err) {
                         console.log(err);
