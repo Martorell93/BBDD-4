@@ -24,6 +24,9 @@ class Nota {
 
 //Llamada Alumnos a la API método GET
 async function getStudent() {
+    if (document.getElementById("cuerpo")) {
+        document.getElementById("cuerpo").remove();
+    }
     //Coger id del elemento
     let id = document.getElementById("id").value;
 
@@ -104,6 +107,8 @@ async function getStudent() {
             console.log(error);
         }
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Alumnos a la API método POST
@@ -133,6 +138,8 @@ async function postStudent() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Alumnos a la API método PUT
@@ -165,6 +172,8 @@ async function putStudent() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Alumnos a la API método DELETE
@@ -189,10 +198,15 @@ async function deleteStudent() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Notas a la API método GET
 async function getMarks() {
+    if (document.getElementById("cuerpo")) {
+        document.getElementById("cuerpo").remove();
+    }
     //Coger id del elemento
     let id = document.getElementById("student_id").value;
 
@@ -248,6 +262,8 @@ async function getMarks() {
             console.log(error);
         }
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Notas a la API método POST
@@ -279,6 +295,8 @@ async function postMarks() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Notas a la API método PUT
@@ -315,6 +333,8 @@ async function putMarks() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Notas a la API método DELETE
@@ -339,10 +359,15 @@ async function deleteMarks() {
     {
         console.log(error);
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Media a la API método GET
 async function getAvg() {
+    if (document.getElementById("cuerpo")) {
+        document.getElementById("cuerpo").remove();
+    }
     //Coger id del elemento
     let id = document.getElementById("student_id").value;
 
@@ -389,10 +414,15 @@ async function getAvg() {
             console.log(error);
         }
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Apuntadas a la API método GET
 async function getApuntadas() {
+    if (document.getElementById("cuerpo2")) {
+        document.getElementById("cuerpo2").remove();
+    }
     //Coger id del elemento
     let id = document.getElementById("student_id2").value;
 
@@ -475,12 +505,17 @@ async function getApuntadas() {
             console.log(error);
         }
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Llamada Impartidas a la API método GET
 async function getImpartidas() {
+    if (document.getElementById("cuerpo3")) {
+        document.getElementById("cuerpo3").remove();
+    }
     //Coger id del elemento
-    let id = document.getElementById("student_id3").value;
+    let id = document.getElementById("teacher_id").value;
 
     //Crear el cuerpo de la tabla
     let cuerpo = document.createElement("tbody");
@@ -559,6 +594,8 @@ async function getImpartidas() {
             console.log(error);
         }
     }
+    let arrE = document.getElementById("prueba");
+    arrE.reset();
 };
 
 //Eliminar info

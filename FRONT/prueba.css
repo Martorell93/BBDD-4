@@ -42,6 +42,12 @@ color: var(--secundaryColor);
     transform: translateX(75px);
 }
 
+.aside:hover ~ .grid_secundario2 {
+    max-width: calc(100% - 200px - (var(--margin_body)*2));
+    min-width: calc(100% - 200px - (var(--margin_body)*2));
+    transform: translateX(75px);
+}
+
 
 /* Navegación lateral */
 .nav {
